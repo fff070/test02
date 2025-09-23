@@ -51,15 +51,15 @@ RUN echo "[+] Download, build and install Capstone" && \
     CAPSTONE_ARCHS="arm aarch64 riscv x86" ./make.sh && \
     make install
 
-# libbitwuzla >= 0.4.0
+# libbitwuzla == main
 RUN echo "[+] Download, build and install Bitwuzla" && \
     cd /tmp && \
     git clone https://github.com/bitwuzla/bitwuzla.git && \
     cd bitwuzla && \
-    git checkout -b 0.4.0 0.4.0 && \
     python3 ./configure.py --shared && \
     cd build && \
-    ninja -j$(nproc) install
+    ninja -j$(nproc) install && \
+    cp $(realpath subprojects/cadical-rel-*/src/libcadical.so)  /usr/local/lib/x86_64-linux-gnu
 
 RUN echo "[+] Build and install Triton" && \
     Z3_PATH=$(python -c "import site; print(f'{site.getsitepackages()[0]}/z3')") && \

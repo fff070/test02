@@ -43,10 +43,10 @@ jobs:
         run: |
           git clone https://github.com/bitwuzla/bitwuzla.git
           cd bitwuzla
-          git checkout -b 0.7.0 0.7.0
           python ./configure.py --shared --prefix $(pwd)/install
           cd build
           sudo ninja install
+          sudo cp $(realpath subprojects/cadical-rel-*/src/libcadical.dylib) ../install/lib -v
           cd ..
 
       - name: Install Capstone
