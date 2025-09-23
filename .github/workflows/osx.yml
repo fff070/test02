@@ -46,7 +46,6 @@ jobs:
           python ./configure.py --shared --prefix $(pwd)/install
           cd build
           sudo ninja install
-          sudo cp $(realpath subprojects/cadical-rel-*/src/libcadical.dylib) ../install/lib -v
           cd ..
 
       - name: Install Capstone

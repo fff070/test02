@@ -58,8 +58,7 @@ RUN echo "[+] Download, build and install Bitwuzla" && \
     cd bitwuzla && \
     python3 ./configure.py --shared && \
     cd build && \
-    ninja -j$(nproc) install && \
-    cp $(realpath subprojects/cadical-rel-*/src/libcadical.so)  /usr/local/lib/x86_64-linux-gnu
+    ninja -j$(nproc) install
 
 RUN echo "[+] Build and install Triton" && \
     Z3_PATH=$(python -c "import site; print(f'{site.getsitepackages()[0]}/z3')") && \

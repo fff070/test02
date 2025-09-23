@@ -52,7 +52,6 @@ jobs:
           python ./configure.py --shared
           cd build
           sudo ninja install
-          sudo cp $(realpath subprojects/cadical-rel-*/src/libcadical.so)  /usr/local/lib/x86_64-linux-gnu -v
           sudo ldconfig
           cd ..
 

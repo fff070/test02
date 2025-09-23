@@ -33,8 +33,7 @@ RUN echo "[+] Download, build and install Bitwuzla" && \
     export PY310_PATH=$(python3.10 -c 'import sys, os; print(os.path.dirname(sys.executable))') && \
     CC=clang CXX=clang++ PATH=$PATH:$PY310_PATH python3.10 ./configure.py --shared --prefix $(pwd)/install && \
     cd build && \
-    PATH=$PATH:$PY310_PATH ninja -j $(nproc) install && \
-    cp $(realpath subprojects/cadical-rel-*/src/libcadical.so) ../install/lib/x86_64-linux-gnu -v
+    PATH=$PATH:$PY310_PATH ninja -j $(nproc) install
 
 # Download Z3.
 RUN echo "[+] Download Z3" && \
