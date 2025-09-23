@@ -6,7 +6,7 @@ jobs:
   build:
     # macos-13 = x86
     # macos-14 = arm (M1)
-    runs-on: macos-14
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
