@@ -1,6 +1,5 @@
 name: Test the VCPKG install
 
-on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build-test-install:

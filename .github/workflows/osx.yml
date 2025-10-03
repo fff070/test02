@@ -1,6 +1,6 @@
 name: Tests on OSX
 
-on: [push, pull_request, workflow_dispatch]
+
 
 jobs:
   build:
