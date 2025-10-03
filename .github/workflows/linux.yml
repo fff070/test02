@@ -26,8 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt update -y
-          sudo apt-get install python3-setuptools libboost-dev libgmp-dev -y
+          sudo apt update
+          sudo apt-get install python3-setuptools libboost-dev libgmp-dev
 
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@v2
