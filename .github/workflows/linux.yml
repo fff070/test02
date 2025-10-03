@@ -26,6 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          sudo apt update
           sudo apt-get install python3-setuptools libboost-dev libgmp-dev
 
       - name: Install LLVM and Clang
