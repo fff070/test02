@@ -37,13 +37,13 @@ jobs:
 
       - name: Install Z3
         run: |
-          sudo apt-get install libz3-dev
+          sudo apt-get install libz3-dev -y
           python -m pip install z3-solver
           python -m pip install importlib-resources
 
       - name: Install Ninja
         run: |
-          sudo apt-get install ninja-build
+          sudo apt-get install ninja-build -y
 
       - name: Install Meson
         run: |
